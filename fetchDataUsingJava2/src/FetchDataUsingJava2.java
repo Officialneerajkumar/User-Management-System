@@ -4,10 +4,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class FetchDataUsingJava {
+public class FetchDataUsingJava2 {
     public static void main(String[] args) throws Exception {
 
-        URL getUrl = new URL("https://api.chucknorris.io/jokes/random");
+        URL getUrl = new URL("https://api.zippopotam.us/us/33162");
         HttpURLConnection connection = (HttpURLConnection) getUrl.openConnection();
         connection.setRequestMethod("GET");
 
