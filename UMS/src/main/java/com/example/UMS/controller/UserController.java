@@ -2,21 +2,21 @@ package com.example.UMS.controller;
 
 import com.example.UMS.model.User;
 import com.example.UMS.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping(value = "api/v1/")
 public class UserController {
     @Autowired
     private UserService userService;
     @PostMapping(value = "/addUser")
-    public String addUser(@RequestBody User user){
+    public String addUser(@Valid @RequestBody User user){
         return userService.createUser(user);
     }
-
     @GetMapping(value = "/getUserById")
     public User getUserById(@RequestParam int id){
         return userService.getUserById(id);
@@ -26,7 +26,7 @@ public class UserController {
         return userService.getAllUser();
     }
     @PutMapping(value = "/updateUser/{id}")
-    public String updateUser(@PathVariable int id,@RequestBody User user){
+    public String updateUser(@PathVariable int id,@Valid @RequestBody User user){
         userService.updateuser(id,user);
         return "update successfuly";
     }

@@ -31,11 +31,12 @@ public class UserService {
     public void updateuser(int id,User newUser) {
         for(User user:userList){
             if(user.getUserId()==id){
-                user.setUserId(newUser.getUserId());
                 user.setUserName(newUser.getUserName());
-                user.setName(newUser.getName());
-                user.setAddress(newUser.getAddress());
                 user.setPhoneNumber(newUser.getPhoneNumber());
+                user.setEmail(newUser.getEmail());
+                user.setDateOfBirth(newUser.getDateOfBirth());
+                user.setDate(newUser.getDate());
+                user.setTime(newUser.getTime());
             }
         }
     }
